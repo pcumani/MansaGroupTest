@@ -4,6 +4,7 @@ from typing import List
 from fastapi import FastAPI
 from pydantic import BaseModel, validator
 
+from clean_predict import predict_outgoing
 
 class Account(BaseModel):
     update_date: date
@@ -66,6 +67,7 @@ async def root(predict_body: RequestPredict):
     # Call your prediction function/code here
     ####################################################
     #predicted_amount = predict(transactions, account)
+    predicted_amount = predict_outgoing(transactions, account)
 
     # Return predicted amount
-    return {"predicted_amount": 0}
+    return {"predicted_amount": predicted_amount}

@@ -3,3 +3,8 @@ pydantic==1.8.2
 requests
 uvicorn
 black
+pandas==1.1.0
+matplotlib==3.5.0
+numpy>=1.15.4
+holidays>0.11
+sklearn==0.0
